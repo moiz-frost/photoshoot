@@ -5,6 +5,8 @@ var app = require('koa')()
   , onerror = require('koa-onerror')
   , session = require('koa-session');
 
+var mongoose = require(__dirname + '/database/connection');
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 

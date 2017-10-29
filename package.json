@@ -23,7 +23,8 @@
     "koa-session": "^4.5.0",
     "koa-static": "^1.5.2",
     "koa-views": "^3.1.0",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "mongoose": "^4.12.4"
   },
   "devDependencies": {
     "nodemon": "^1.8.1",
