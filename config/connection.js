@@ -1,6 +1,7 @@
 var mongoose = module.exports = require('mongoose');
 
 // use node's native Promise library
+// mongoose uses a deprecated Promise library
 mongoose.Promise = global.Promise;
 
 // database connection

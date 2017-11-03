@@ -3,17 +3,19 @@ var app = require('koa')()
   , json = require('koa-json')
   , views = require('koa-views')
   , onerror = require('koa-onerror')
-  , session = require('koa-session');
+  , session = require('koa-session')
+  , path = require('path');
 
-var mongoose = require(__dirname + '/database/connection');
+// config dir
+var configDir = path.join(__dirname, '/config/');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var mongoose = require(configDir + '/connection')
+  , routes = require(configDir + '/combinedRoutes');
 
 // error handler
 onerror(app);
 
-// global middlewares
+// global middleware
 app
   .use(views('views', {
     root: __dirname + '/views',
@@ -32,11 +34,10 @@ app
   .use(session(app))
 
 // routes definition
-  .use(index.routes(), index.allowedMethods())
-  .use(users.routes(), users.allowedMethods());
+  .use(routes)
 
 // error-handling
-app.on('error', (err, ctx) => {
+  .on('error', (err, ctx) => {
   console.error('server error', err, ctx)
 });
 
