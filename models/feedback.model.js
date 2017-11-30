@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var feedbackSchema = new Schema({
   id:  {
-  	type: ObjectId // ObjectId | Oid
+  	type: Schema.Types.ObjectId // ObjectId | Oid
   },
   comment: {
   	type: String,
@@ -17,6 +17,6 @@ var feedbackSchema = new Schema({
 
 module.exports = {
   schema: feedbackSchema,
-  instance: mongoose.model('Feedback', feedbackSchema);
+  instance: mongoose.model('Feedback', feedbackSchema)
 } 
 

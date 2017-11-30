@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var feedback = require(__dirname + '/feedback');
+var feedback = require(__dirname + '/feedback.model');
 
 var clientSchema = new Schema({
   id:  {
-  	type: ObjectId // ObjectId | Oid
+  	type: Schema.Types.ObjectId // ObjectId | Oid
   },
   name: {
   	type: String,
@@ -16,7 +16,7 @@ var clientSchema = new Schema({
   	type: String,
   	required: true,
   	lowercase: true
-  }
+  },
   rating: { // 1 - 5
   	type: Number,
   	min: 1,

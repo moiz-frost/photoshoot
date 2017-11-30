@@ -23,6 +23,8 @@ function combineRouters (routers) {
   var middleware = [];
 
   routers.forEach(function (router) {
+    // console.log((router.allowedMethods())());
+    // console.log((router.routes().router) == router); // Same thing
     middleware.push(router.routes());
     middleware.push(router.allowedMethods());
   });

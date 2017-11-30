@@ -4,34 +4,47 @@ var app = require('koa')()
   , views = require('koa-views')
   , onerror = require('koa-onerror')
   , session = require('koa-session')
+  , body = require('koa-better-body')
+  , koaResponseTime = require('koa-response-time')
   , path = require('path');
 
-// config dir
-var configDir = path.join(__dirname, '/config/');
+// require all paths
+var paths = require('app/appGlobals').paths;
 
-var mongoose = require(configDir + '/connection')
-  , routes = require(configDir + '/combinedRoutes');
+var mongoose = require(paths.mongoose)
+  , routes = require(paths.routes);
+
+// auth middleware  
+var authMiddleware = require(paths.auth)
+  , jwt = require(paths.jwt)
 
 // error handler
 onerror(app);
 
 // global middleware
+
+app.keys = ['some secret hurr hurr'];
 app
   .use(views('views', {
     root: __dirname + '/views',
     default: 'jade'
   }))
-  .use(require('koa-bodyparser')())
+  .use(body())
   .use(json())
   .use(logger())
+  .use(koaResponseTime())
   .use(function *(next){
+    // response time
     var start = new Date;
     yield next;
     var ms = new Date - start;
     console.log('%s %s - %s', this.method, this.url, ms);
   })
-  .use(require('koa-static')(__dirname + '/public'))
+  .use(require('koa-static')(__dirname + '/public')) // directory to static assets
   .use(session(app))
+
+// middleware
+  .use(authMiddleware)
 
 // routes definition
   .use(routes)

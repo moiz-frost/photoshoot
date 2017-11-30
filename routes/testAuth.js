@@ -1,10 +1,23 @@
-var router = require('koa-router')()
-	,	jwt = require('jsonwebtoken');
+// Just a testing route
 
-router.get('/auth', function *(next) {
-  yield this.render('index', {
-    title: 'Hello World Koa!'
-  });
+var router = require('koa-router')()
+	,	parse = require('co-body')
+	,	paths = require('app/appGlobals').paths
+	,	jwt = require(paths.jwt);
+
+router
+	.post('/auth', function *(next) {
+		// this.body = JSON.stringify({
+		// 	token: jwt.sign({ role: 'admin' }, '100% secret'),
+		// 	message: 'Success'
+		// });
+		// this.body = JSON.stringify(this.request.fields);
+		// console.log(this.session);
+		// console.log(this.request);
+		// console.log(Object.keys(this.request));
+		// console.log(Object.keys(this.response));
+		// console.log(Object.keys(this.request.fields));
+		yield next;
 });
 
 module.exports = router;

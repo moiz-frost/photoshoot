@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var feedback = require(__dirname + '/feedback');
+var feedback = require(__dirname + '/feedback.model');
 
 var photographerSchema = new Schema({
   id:  {
-  	type: ObjectId // ObjectId | Oid
+  	type: Schema.Types.ObjectId // ObjectId | Oid
   },
   name: {
   	type; String,
@@ -22,7 +22,7 @@ var photographerSchema = new Schema({
   Expertise: {
     required: true,
     type: String
-  }
+  },
   rating: { // 1 - 5
   	type: Number,
   	min: 1,
