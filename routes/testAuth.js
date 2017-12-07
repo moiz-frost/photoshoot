@@ -7,6 +7,12 @@ var router = require('koa-router')()
 
 router
 	.post('/auth', function *(next) {
+		// console.log(Object.keys(this.cookies));
+		// console.log(this.cookies);
+		// var set = this.cookies.set('mois', 'daddy', { signed: true, httpOnly: true });
+		// var get = this.cookies.get('mois');
+		// console.log(set);
+		// console.log(get);
 		// this.body = JSON.stringify({
 		// 	token: jwt.sign({ role: 'admin' }, '100% secret'),
 		// 	message: 'Success'

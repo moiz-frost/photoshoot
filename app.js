@@ -5,11 +5,13 @@ var app = require('koa')()
   , onerror = require('koa-onerror')
   , session = require('koa-session')
   , body = require('koa-better-body')
+  , cookie = require('koa-cookie')
   , koaResponseTime = require('koa-response-time')
   , path = require('path');
 
 // require all paths
-var paths = require('app/appGlobals').paths;
+var appGlobals = require('app/appGlobals');
+var paths = appGlobals.paths;
 
 var mongoose = require(paths.mongoose)
   , routes = require(paths.routes);
@@ -23,7 +25,9 @@ onerror(app);
 
 // global middleware
 
-app.keys = ['some secret hurr hurr'];
+
+// Uses KeyGrip by default
+app.keys = [appGlobals.session_key];
 app
   .use(views('views', {
     root: __dirname + '/views',
