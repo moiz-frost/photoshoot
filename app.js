@@ -5,7 +5,6 @@ var app = require('koa')()
   , onerror = require('koa-onerror')
   , session = require('koa-session')
   , body = require('koa-better-body')
-  , cookie = require('koa-cookie')
   , koaResponseTime = require('koa-response-time')
   , path = require('path');
 
