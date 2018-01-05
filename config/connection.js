@@ -9,4 +9,6 @@ mongoose.connect('mongodb://admin:admin@ds241055.mlab.com:41055/photoshoot', {
   useMongoClient: true
 }).then(function (db){
   // console.log(db);
+}).catch(function (err){
+  console.log(err.message);
 });

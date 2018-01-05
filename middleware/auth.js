@@ -4,8 +4,8 @@ var jwt = require('koa-jwt')
 module.exports = function *(next) {
 
 	try {
-		// var token = this.request.header['authorization'].split(" ")[1];
-		var token = this.get('authorization').split(" ")[1]; // this.response.get
+		var token = this.request.header['authorization'].split(" ")[1];
+		// var token = this.get('authorization').split(" ")[1]; // this.response.get
 	} catch(err) {
 		var user = this.request.fields;
 		var token = jwt.sign(user, appGlobals.jwt_key);
@@ -30,7 +30,7 @@ module.exports = function *(next) {
 			this.body = JSON.stringify({
 				"Error": 'Invalid token'
 			});
-			// console.log(err);
+			console.log(err);
 		}
 	}
 

@@ -13,6 +13,7 @@ router
 		// var get = this.cookies.get('mois');
 		// console.log(set);
 		// console.log(get);
+		// console.log("Inside");
 		// this.body = JSON.stringify({
 		// 	token: jwt.sign({ role: 'admin' }, '100% secret'),
 		// 	message: 'Success'
