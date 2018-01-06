@@ -30,7 +30,7 @@ module.exports = function *(next) {
 			this.body = JSON.stringify({
 				"Error": 'Invalid token'
 			});
-			console.log(err);
+			// console.log(err);
 		}
 	}
 

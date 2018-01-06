@@ -41,7 +41,7 @@ module.exports = {
 
 	findAll: function *(next) {
 		var username = this.request.fields.username;
-		var queryResponse = Credential.find({
+		var queryResponse = Credential.findAll({
 			username: username
 		}).then(function(result){
 			if (result.length === 0) {
