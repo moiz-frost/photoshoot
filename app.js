@@ -5,7 +5,6 @@ var app = require('koa')()
   , onerror = require('koa-onerror')
   , session = require('koa-session')
   , body = require('koa-better-body')
-  , cors = require('kcors')
   , koaResponseTime = require('koa-response-time')
   , path = require('path');
 
@@ -50,6 +49,7 @@ app
 // include before other routes
   .use(function *(next){
     this.set('Access-Control-Allow-Origin', '*');
+    yield next;
   })
 
 // middleware
