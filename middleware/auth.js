@@ -3,7 +3,7 @@ var jwt = require('koa-jwt')
 
 module.exports = function *(next) {
 	// this.set('Access-Control-Allow-Origin', '*');
-	this.request.header['Access-Control-Allow-Origin'] = '*';
+	this.response.header['Access-Control-Allow-Origin'] = '*';
 	console.log('inside');
 
 	try {
