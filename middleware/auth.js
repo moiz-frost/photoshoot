@@ -2,7 +2,8 @@ var jwt = require('koa-jwt')
 	,	appGlobals = require('app/appGlobals');
 
 module.exports = function *(next) {
-	this.set('Access-Control-Allow-Origin', '*');
+	// this.set('Access-Control-Allow-Origin', '*');
+	this.request.header['Access-Control-Allow-Origin'] = '*';
 	console.log('inside');
 
 	try {
