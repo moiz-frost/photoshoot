@@ -42,8 +42,10 @@
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
 
-<% if (scripts) { %>
-    <% for (i = 0; i < scripts.length; i++) { %>
-        <script src="<%- scripts[i] %>"></script>
-    <% } %>
+<% if (typeof scripts !== 'undefined') {%>
+	<% if (scripts) { %>
+	    <% for (i = 0; i < scripts.length; i++) { %>
+	        <script src="<%- scripts[i] %>"></script>
+	    <% } %>
+	<% } %>
 <% } %>

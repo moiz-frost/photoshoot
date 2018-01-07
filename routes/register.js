@@ -4,11 +4,11 @@ var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	var loginPage = fs.readFileSync('views/pages/login.ejs', 'utf8');
+	var registerPage = fs.readFileSync('views/pages/register.ejs', 'utf8');
   res.render('layouts/pages', 
   	{ 
-  		content: loginPage,
-  		scripts: ['assets/js/login.js']
+  		content: registerPage,
+  		scripts: ['assets/js/register.js']
   	});
 });
 

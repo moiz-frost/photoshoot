@@ -74,8 +74,11 @@
     </nav>
     <div class="content">
         <div class="container-fluid">
+            <% if (typeof content !== 'undefined') {%>
+                <%- content %>
+            <% } %>
         </div>
     </div>
 
-    <% include partials/footer %>
+    <% include footer %>
 </div>

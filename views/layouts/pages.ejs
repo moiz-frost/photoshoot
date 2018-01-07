@@ -4,24 +4,27 @@
 <head>
 
 <!-- include header -->
-<% include partials/head %>
+<% include ../partials/head %>
 
 </head>
 
 <body class="off-canvas-sidebar">
 
-	<% include partials/navbar %>
+	<% include ../partials/navbar %>
 
 	<!-- include body -->
 	<div class="wrapper wrapper-full-page">
 		<!-- off-dashboard pages here -->
+		<% if (typeof content !== 'undefined') {%>
+			<%- content %>
+		<% } %>
 	</div>
 
-	<% include partials/footer %>
+	<% include ../partials/footer %>
 
 </body>
 
 <!-- include scripts -->
-<% include partials/scripts %>
+<% include ../partials/scripts %>
 
 </html>
