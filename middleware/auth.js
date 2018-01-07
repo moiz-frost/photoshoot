@@ -3,6 +3,7 @@ var jwt = require('koa-jwt')
 
 module.exports = function *(next) {
 	this.set('Access-Control-Allow-Origin', '*');
+	console.log('inside');
 
 	try {
 		var token = this.request.header['authorization'].split(" ")[1];
@@ -27,6 +28,7 @@ module.exports = function *(next) {
   			});
   		}
 			console.log(decoded);
+			console.log(token);
   		yield next;
 		} catch(err) {
 			this.body = JSON.stringify({
