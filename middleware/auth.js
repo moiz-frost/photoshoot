@@ -2,11 +2,9 @@ var jwt = require('koa-jwt')
 	,	appGlobals = require('app/appGlobals');
 
 module.exports = function *(next) {
-		console.log('Keys ' + Object.keys(this.request.fields));
 
 	try {
 		var token = this.request.header['authorization'].split(" ")[1];
-		// console.log('Token ' + token);
 		// var token = this.get('authorization').split(" ")[1]; // this.response.get
 	} catch(err) {
 		var user = this.request.fields;
@@ -26,15 +24,13 @@ module.exports = function *(next) {
   				'Error': 'No response'
   			});
   		}
-			// console.log('Decoded ' + decoded);
-			// console.log('Token ' + token);
-			// console.log('Keys ' + Object.keys(this.request.fields));
+			// console.log(decoded);
   		yield next;
 		} catch(err) {
 			this.body = JSON.stringify({
 				"Error": 'Invalid token'
 			});
-			console.log(err);
+			// console.log(err);
 		}
 	}
 
