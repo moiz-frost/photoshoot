@@ -9,6 +9,7 @@ module.exports = function *(next) {
 		// var token = this.get('authorization').split(" ")[1]; // this.response.get
 	} catch(err) {
 		var user = this.request.fields;
+		console.log(user);
 		var token = jwt.sign(user, appGlobals.jwt_key);
 		this.body = JSON.stringify({
 			token: token,

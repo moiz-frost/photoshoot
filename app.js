@@ -62,7 +62,7 @@ app
   })
 
 // middleware
-  // .use(authMiddleware)
+  .use(authMiddleware)
 
 // routes definition
   .use(routes)
