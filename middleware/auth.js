@@ -17,7 +17,6 @@ module.exports = function *(next) {
 	}
 
 	if (token) {
-		console.log(token);
 		try {
   		var decoded = jwt.verify(token, appGlobals.jwt_key);
   		if(!this.body) {
@@ -25,7 +24,9 @@ module.exports = function *(next) {
   				'Error': 'No response'
   			});
   		}
-			console.log(decoded);
+			console.log('Decoded ' + decoded);
+			console.log('Token ' + token);
+			console.log('Keys ' + Object.keys(this.request.fields));
   		yield next;
 		} catch(err) {
 			this.body = JSON.stringify({
