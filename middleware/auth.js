@@ -25,13 +25,13 @@ module.exports = function *(next) {
   				'Error': 'No response'
   			});
   		}
-			// console.log(decoded);
+			console.log(decoded);
   		yield next;
 		} catch(err) {
 			this.body = JSON.stringify({
 				"Error": 'Invalid token'
 			});
-			// console.log(err);
+			console.log(err);
 		}
 	}
 

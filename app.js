@@ -48,10 +48,12 @@ app
 
 // include before other routes
   .use(function *(next){
-    this.set('Access-Control-Allow-Origin', '*');
-    this.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    this.set({
+      'Access-Control-Allow-Origin', '*',
+      'Access-Control-Allow-Headers', 'Content-Type, Authorization',
+      'Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS, DELETE, UPDATE'
+    });
     // this.set('Content-Type', 'application/json');
-    this.set('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS, DELETE, UPDATE');
     if ('OPTIONS' == this.method) {
       console.log('OPTIONS METHOD IS HERE');
       this.status = 200;
