@@ -47,10 +47,10 @@ app
   .use(session(app))
 
 // include before other routes
-  .use(function *(next){
-    this.set('Access-Control-Allow-Origin', '*');
-    yield next;
-  })
+  // .use(function *(next){
+  //   this.set('Access-Control-Allow-Origin', '*');
+  //   yield next;
+  // })
 
 // middleware
   .use(authMiddleware)
