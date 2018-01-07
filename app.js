@@ -49,9 +49,9 @@ app
 // include before other routes
   .use(function *(next){
     this.set({
-      'Access-Control-Allow-Origin', '*',
-      'Access-Control-Allow-Headers', 'Content-Type, Authorization, Origin, X-Requested-With, Accept',
-      'Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS, DELETE, UPDATE'
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization, Origin, X-Requested-With, Accept',
+      'Access-Control-Allow-Methods': 'GET, PUT, POST, OPTIONS, DELETE, UPDATE'
     });
     // this.set('Content-Type', 'application/json');
     if ('OPTIONS' == this.method) {
