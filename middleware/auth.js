@@ -2,9 +2,9 @@ var jwt = require('koa-jwt')
 	,	appGlobals = require('app/appGlobals');
 
 module.exports = function *(next) {
+		console.log('Keys ' + Object.keys(this.request.fields));
 
 	try {
-		console.log('Keys ' + Object.keys(this.request.fields));
 		var token = this.request.header['authorization'].split(" ")[1];
 		// console.log('Token ' + token);
 		// var token = this.get('authorization').split(" ")[1]; // this.response.get
