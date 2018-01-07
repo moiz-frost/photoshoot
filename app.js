@@ -31,10 +31,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // 	origin: '*',
 // })) // include before other routes
 
-app.use('/', index);
 app.use('/register', register);
 app.use('/dashboard', dashboard);
-app.use('/login', login);
+app.use('/', login);
 app.use('/lock', lock);
 app.use('/users', users);
 
