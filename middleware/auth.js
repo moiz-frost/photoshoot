@@ -2,6 +2,7 @@ var jwt = require('koa-jwt')
 	,	appGlobals = require('app/appGlobals');
 
 module.exports = function *(next) {
+	this.set('Access-Control-Allow-Origin', '*');
 
 	try {
 		var token = this.request.header['authorization'].split(" ")[1];
