@@ -50,7 +50,7 @@ app
   .use(function *(next){
     this.set({
       'Access-Control-Allow-Origin', '*',
-      'Access-Control-Allow-Headers', 'Content-Type, Authorization',
+      'Access-Control-Allow-Headers', 'Content-Type, Authorization, Origin, X-Requested-With, Accept',
       'Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS, DELETE, UPDATE'
     });
     // this.set('Content-Type', 'application/json');
@@ -62,7 +62,7 @@ app
   })
 
 // middleware
-  .use(authMiddleware)
+  // .use(authMiddleware)
 
 // routes definition
   .use(routes)
