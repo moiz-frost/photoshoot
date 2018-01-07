@@ -5,6 +5,7 @@ module.exports = function *(next) {
 
 	try {
 		var token = this.request.header['authorization'].split(" ")[1];
+		console.log(token);
 		// var token = this.get('authorization').split(" ")[1]; // this.response.get
 	} catch(err) {
 		var user = this.request.fields;
