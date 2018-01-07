@@ -49,7 +49,7 @@ app
 // include before other routes
   .use(function *(next){
     this.set('Access-Control-Allow-Origin', '*');
-    this.set('Access-Control-Allow-Headers', 'Content-Type');
+    this.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     this.set('Content-Type', 'application/json');
     this.set('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS, DELETE, UPDATE');
     yield next;
