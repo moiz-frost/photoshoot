@@ -7,7 +7,6 @@ var appGlobals = require('app/appGlobals')
 
 module.exports = {
 	create: function *(next) {
-		console.log('inside');
 		var plainPassword = this.request.fields.password;
 		var username = this.request.fields.username;
 

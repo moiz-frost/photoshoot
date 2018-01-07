@@ -6,6 +6,7 @@ module.exports = function *(next) {
 	try {
 		var token = this.request.header['authorization'].split(" ")[1];
 		// var token = this.get('authorization').split(" ")[1]; // this.response.get
+		console.log('Inside');
 	} catch(err) {
 		var user = this.request.fields;
 		var token = jwt.sign(user, appGlobals.jwt_key);
