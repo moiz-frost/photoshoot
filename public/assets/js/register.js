@@ -27,7 +27,8 @@ $(document).ready(function() {
 			type: 'post',
 			headers: {
 				'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im1vaXMiLCJwYXNzd29yZCI6ImlkaW90IiwiaWF0IjoxNTEyODIyNDMzfQ.cJNzklmBjULMZorw8lM5A0V_WSltmGJ8I8wyazIL7_Y',
-				'Content-Type': 'application/x-www-form-urlencoded'
+				'Origin:https://photoshoot-api.herokuapp.com'
+				// 'Content-Type': 'application/x-www-form-urlencoded'
 			},
 			dataType: 'json',
 	    data: {
@@ -42,28 +43,28 @@ $(document).ready(function() {
 	});
 
 
-  function submitCredentials(){
-		$.ajax({
-			url: '/',
-			type: 'POST',
-			dataType: 'JSON',
-			headers: {
-				'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im1vaXMiLCJwYXNzd29yZCI6ImlkaW90IiwiaWF0IjoxNTEyODIyNDMzfQ.cJNzklmBjULMZorw8lM5A0V_WSltmGJ8I8wyazIL7_Y'
-			},
-			contentType: 'application/json',
-	    data: JSON.stringify({
-	     'username': $('#username').val(),
-	     'password': $('#password').val() 
-	   })
-		})
-		.done(function(data) {
-			console.log(data);
-		})
-		.fail(function(err) {
-			console.log(err.status);
-		})
-		.always(function(){
-		});
-	}
+ //  function submitCredentials(){
+	// 	$.ajax({
+	// 		url: '/',
+	// 		type: 'POST',
+	// 		dataType: 'JSON',
+	// 		headers: {
+	// 			'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im1vaXMiLCJwYXNzd29yZCI6ImlkaW90IiwiaWF0IjoxNTEyODIyNDMzfQ.cJNzklmBjULMZorw8lM5A0V_WSltmGJ8I8wyazIL7_Y'
+	// 		},
+	// 		contentType: 'application/json',
+	//     data: JSON.stringify({
+	//      'username': $('#username').val(),
+	//      'password': $('#password').val() 
+	//    })
+	// 	})
+	// 	.done(function(data) {
+	// 		console.log(data);
+	// 	})
+	// 	.fail(function(err) {
+	// 		console.log(err.status);
+	// 	})
+	// 	.always(function(){
+	// 	});
+	// }
 
 });
