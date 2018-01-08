@@ -26,8 +26,7 @@ $(document).ready(function() {
 			url: 'https://photoshoot-api.herokuapp.com/credentials/create',
 			type: 'post',
 			headers: {
-				'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im1vaXMiLCJwYXNzd29yZCI6ImlkaW90IiwiaWF0IjoxNTEyODIyNDMzfQ.cJNzklmBjULMZorw8lM5A0V_WSltmGJ8I8wyazIL7_Y',
-				'Origin': 'https://photoshoot-api.herokuapp.com'
+				'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im1vaXMiLCJwYXNzd29yZCI6ImlkaW90IiwiaWF0IjoxNTEyODIyNDMzfQ.cJNzklmBjULMZorw8lM5A0V_WSltmGJ8I8wyazIL7_Y'
 				// 'Content-Type': 'application/x-www-form-urlencoded'
 			},
 			dataType: 'json',
