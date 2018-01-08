@@ -27,7 +27,7 @@ $(document).ready(function() {
 			type: 'post',
 			headers: {
 				'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im1vaXMiLCJwYXNzd29yZCI6ImlkaW90IiwiaWF0IjoxNTEyODIyNDMzfQ.cJNzklmBjULMZorw8lM5A0V_WSltmGJ8I8wyazIL7_Y',
-				'Origin:https://photoshoot-api.herokuapp.com'
+				'Origin': 'https://photoshoot-api.herokuapp.com'
 				// 'Content-Type': 'application/x-www-form-urlencoded'
 			},
 			dataType: 'json',
