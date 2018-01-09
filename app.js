@@ -46,7 +46,7 @@ app
   .use(require('koa-static')(__dirname + '/public')) // directory to static assets
   .use(session(app))
 
-// include before other routes
+// include before other routes for cors
   .use(function *(next){
     this.set({
       'Access-Control-Allow-Origin': '*',
@@ -55,7 +55,7 @@ app
     });
     // this.set('Content-Type', 'application/json');
     if ('OPTIONS' == this.method) {
-      console.log('OPTIONS METHOD IS HERE');
+      console.log('OPTIONS METHOD, PREFLIGHT IS HERE');
       this.status = 200;
     }
     yield next;

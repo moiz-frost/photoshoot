@@ -8,13 +8,18 @@ var credentialsSchema = new Schema({
   username: {
   	type: String,
   	required: true,
-  	lowercase: true,
+  	lowercase: false,
     unique: true
   },
   password: {
   	type: String,
+    maxlength: 100,
   	required: true,
-  	lowercase: true
+  	lowercase: false
+  },
+  token: {
+    type: String,
+    required: false,
   }
 });
 
